@@ -114,6 +114,10 @@ namespace GdipEffects {
 			ColorModifier^ get() {return alpha;}
 			void set(ColorModifier^ val) {alpha = val; SetParams();}
 		}
+		void Update()
+		{
+			SetParams();
+		}
 	private:
 		gdip_effect_wrap<Gdiplus::ColorLUT>* nativeMember;
 		ColorModifier^ red, ^green, ^blue, ^alpha;
