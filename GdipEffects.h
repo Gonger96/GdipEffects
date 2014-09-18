@@ -50,6 +50,14 @@ namespace GdipEffects {
 	{
 	public:
 		virtual ~Effect() {}
+		property bool IsAvailable
+		{
+			bool get()
+			{
+				OperatingSystem^ os = Environment::OSVersion;
+				return (os->Platform == PlatformID::Win32NT) && (os->Version->Major >= 6);
+			}
+		}
 		property int AuxDataSize
 		{
 			int get()
